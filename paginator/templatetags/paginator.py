@@ -50,6 +50,7 @@ def get_page_context(page, url_func, adjacent, caps):
                           'current': page.number==number})
         pages.append(group)
     c = {'pages': pages}
+    c['count'] = page.paginator.count
     if current > 1:
         c['previous_url'] = url_func(current-1)
     if current < count:
